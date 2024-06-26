@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>Bat Ball Game</title>
+  <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+
+<!-- This is a Basic Game of Bat , Ball , and Stump
+    win case :
+    if you choose Bat and other choose Ball -> You Win
+    if you choose Ball other choose stump -> you win
+    if you choose stump other choose bat -> you win
+
+    Tie case:
+    if both chooses same match will be tie
+    -->
+  <div id = "display">
+    <h1>Bat Ball Stump Game</h1>
+
+    <div id="button-container">
+       <button class ="choice-button" id="Bat"
+       onclick = "
+      ComputerChoice = generateComputerChoice();
+      let resultMsg = gettingResult('Bat' ,ComputerChoice );
+      showResult('Bat' ,ComputerChoice , resultMsg );
+       "
+       ><img src="../images/bat.png" alt="Bat Image" class="choice-image"></button>
+
+       <!-- ball discription -->
+
+       <button class ="choice-button" id="Ball" 
+       
+       onclick = "
+       ComputerChoice = generateComputerChoice();
+       resultMsg = gettingResult('Ball' , ComputerChoice);
+       showResult('Ball' ,ComputerChoice ,resultMsg );
+       "
+       ><img src="../images/ball.png" alt="Ball Image" class="choice-image"></button>
+
+
+        <!-- stump case-->
+       <button class ="choice-button" id="Stump" 
+       
+       onclick = "
+      let ComputerChoice = generateComputerChoice();
+      resultMsg = gettingResult('Stump' , ComputerChoice);
+      showResult('Stump' ,ComputerChoice ,resultMsg );
+       "
+
+       ><img src="../images/stump.png" alt="Stump Image" class="choice-image"></button>
+    </div><br>
+  
+
+    <h3 id="user-move"></h3>
+    <h3 id="computer-move"></h3>
+    <h3 id="result"></h3>
+    <h3 id="score"></h3>
+
+    <button onclick="localStorage.clear();
+    resetScore();
+    ">Reset</button>
+  </div>
+  <script src="../script/index.js"></script>
+</body>
+</html>
